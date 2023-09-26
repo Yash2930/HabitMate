@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addHabit } from "../redux/features/habitSlice";
 
-const Navbar = ({ name }) => {
+
+const Navbar = ({ submitForm ,habitform,cancelform}) => {
   // call use dispatch hook a variable call dispatch
   const dispatch = useDispatch();
+  const [habitName, setHabitName] = useState("");
 
   // change state acording time
   const [hour, setHour] = useState(0);
@@ -16,10 +18,15 @@ const Navbar = ({ name }) => {
 
   // function for add habit
   const handleSave = () => {
-    const habitName = document.getElementById("habitName").value;
+
     dispatch(addHabit(habitName));
     alert("Your habit added successfully");
-    document.getElementById("habitName").value = "";
+    setHabitName("");
+  };
+
+  
+  const handleInputChange = (event) => {
+    setHabitName(event.target.value); // Update the habitName state as the user types
   };
 
   return (
@@ -51,15 +58,14 @@ const Navbar = ({ name }) => {
             Reflect and level up your habits.
           </div>
         )}
-
+         
         <div className="right-nav">
           <div className="navbar-addhabit">
             <img src="https://cdn-icons-png.flaticon.com/128/10473/10473587.png" alt="addhabit" />
           </div>
           <button
+          onClick={submitForm}
             className="addhabit-btn"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
           >
             <i className="fa-solid fa-plus"></i> Add Habits
           </button>
@@ -67,56 +73,36 @@ const Navbar = ({ name }) => {
       </div>
 
       {/* modal for add habit form */}
-      <div
-        className="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="staticBackdropLabel">
-                Add your habit and keep a track;)
-              </h5>
+      {habitform &&
+        <div
+        className="HabitForm"  
+         >
+          <div className="habit-form-Container">
+          <div className="habit-form-header">
+              <h3>Add your habit and keep track</h3>
+              <img onClick={cancelform} className="cancel-image" src="https://cdn-icons-png.flaticon.com/128/9247/9247838.png"></img>
             </div>
-            <div className="modal-body">
-              <div className="mb-3">
-                <label
-                  htmlFor="exampleInputEmail1"
-                  className="form-label"
-                ></label>
-                <input
+              <div className="input-filed">
+                <input className="input-save"
                   type="text"
-                  className="form-control"
-                  id="habitName"
                   placeholder="Enter habit name"
-                  autoComplete="off"
+                  value={habitName} 
+                 onChange={handleInputChange}
                 />
+                 <button className="save-btn" onClick={handleSave}>Save</button>
               </div>
+
+             
+              
+             
+          
             </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleSave}
-              >
-                Save
-              </button>
-            </div>
+          
           </div>
-        </div>
-      </div>
+       
+     
+      }
+      
     </>
   );
 };

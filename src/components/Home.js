@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Habits from "./Habits";
 import Navbar from "./Navbar";
 
 
 
 const Home = () => {
+  const [habitform,setHabitForm]=useState(false);
+  function submitForm (){
+    setHabitForm(true);
+ 
+  }
+  function cancelform(){
+    setHabitForm(false);
+  }
   return (
     <div className="contanier">
       <div id="app-title">
@@ -13,7 +21,7 @@ const Home = () => {
           <span id="firstpart">TRACK</span> <span id="secondpart">it</span>
         </a>
       </div>
-      <Navbar />
+      <Navbar submitForm={submitForm} habitform={habitform} cancelform={cancelform}/>
       <Habits />
    
     </div>

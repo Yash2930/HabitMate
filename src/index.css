@@ -49,6 +49,48 @@ body {
     height: 101%;
   
 }
+.HabitForm{
+  position: absolute;
+  height: 137vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.habit-form-Container{
+  background-color: #003340;
+  height: 28%;
+  width: 25%;
+  margin-left: 54px
+}
+.input-filed{
+  padding-top: 20%;
+  padding-left: 20%;
+}
+.save-btn{
+height: 30px;
+width: 50px;
+}
+
+.habit-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.habit-form-header button {
+  margin-left: auto; 
+}
+
+.cancel-image{
+  height: 20px;
+  width: 20px;
+}
 .gap{
   padding-bottom: 30px;
 }
@@ -330,6 +372,11 @@ body {
   transform-style: preserve-3d; /* Enable 3D transformations */
   perspective: 1000px; /* Set the perspective for 3D effects */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+  margin-left: 189px;
+  margin-top: 20px;
+  padding-left: 75px;
+  padding-right: 44px;
+
 }
 .backtohome a {
   text-decoration: none;
@@ -342,3 +389,13 @@ body {
 }
 
 
+.text-center{
+  margin-left:116px;
+}
+
+.input-save{
+  height: 30px;
+  width: 200px;
+  margin-right: 10px;
+  margin-left: -20px;
+}

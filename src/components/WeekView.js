@@ -34,14 +34,14 @@ const WeekView = () => {
           <DayView day={day} key={index} />
         ))}
      
-      <div className="d-grid gap-2 col-6 mx-auto mt-5">
+      
         <button className="backtohome" type="button">
           <Link to="/" className="link-text">
          BACK TO HOME
           </Link>
         </button>
       </div>
-    </div>
+  
   );
 };
 
