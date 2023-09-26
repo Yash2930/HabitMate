@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HabitMate/static/css/main.7c405c40.css",
-    "main.js": "/HabitMate/static/js/main.26a24f20.js",
+    "main.js": "/HabitMate/static/js/main.3a9d86b6.js",
     "index.html": "/HabitMate/index.html",
     "main.7c405c40.css.map": "/HabitMate/static/css/main.7c405c40.css.map",
-    "main.26a24f20.js.map": "/HabitMate/static/js/main.26a24f20.js.map"
+    "main.3a9d86b6.js.map": "/HabitMate/static/js/main.3a9d86b6.js.map"
   },
   "entrypoints": [
     "static/css/main.7c405c40.css",
-    "static/js/main.26a24f20.js"
+    "static/js/main.3a9d86b6.js"
   ]
 }
